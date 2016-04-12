@@ -1,0 +1,3 @@
+Publish to gh-pages http://docs.getpelican.com/en/3.3.0/tips.html
+Theme: https://github.com/lazycoder-ru/lazystrap/tree/c9358d8184314bddc6a04adc9ddf6dd001d1f8e0
+
