@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Ian Laird'
 SITENAME = u'IanRLaird.com'
 # SITESUBTITLE = ""
-SITEURL = ''
+# SITEURL = 'ianrlaird.com'
 
 GITHUB_USERNAME = "en0"
 BLOG_START_YEAR = "2016"
@@ -44,8 +44,8 @@ ARTICLE_SAVE_AS = 'blog/{slug}/index.html'
 ARCHIVES_SAVE_AS = 'archives/index.html'
 PAGINATED_DIRECT_TEMPLATES = ('archives',)
 PAGINATION_PATTERNS = (
-    (1, '{base_name}/', '{base_name}/index.html'),
-    (2, '{base_name}/page{number}/', '{base_name}/page{number}/index.html')
+    (1, '{name}/', '{name}/index.html'),
+    (2, '{name}/page{number}/', '{name}/page{number}/index.html')
 )
 
 
