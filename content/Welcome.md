@@ -1,8 +1,8 @@
 Title: Welcome
 Date: 2016-04-11 23:00
-Tags: other
-Category: Other
-Slug: other
+Tags: Intro,Author
+Category: Blog
+Slug: welcome
 Author: Ian Laird
 Summary: What I do.
 
