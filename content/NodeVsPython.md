@@ -10,9 +10,9 @@ Summary: A comparison between the execution speed of Python and Node.js
 
 <br/>
 
-Python is generally my tool of choice for random development tasks. It's clean,
-it has many useful and maintained packages, and the environment is most always
-available. This make Python a wonderful, get it done tool.
+Python is my tool of choice for random development tasks. It's clean, it has
+many useful and maintained packages, and the environment is most always
+available. This makes Python a wonderful, get it done tool.
 
 Node.js is a new language to me. We have begun to use it quite heavily at work
 and it is clearly gaining popularity in the development communities. I have a
@@ -24,7 +24,7 @@ that I did to see the execution speed of Node.js as it compared to Python. To be
 clear, I am __not__ talking about the event loop model. I am talking about the
 interpretation of a _task_ to its fulfillment by the underlining system.
 
-A link to the code is available at the bottom of this page.
+_A link to the code is available at the bottom of this page._
 
 # Testing Concept
 
@@ -39,7 +39,7 @@ of work, and compare to the opposing language.
 # Case 1 - Blocking IO
 
 Blocking IO is a very common thing in software development. This occurs
-whenever a program accesses a disk or network resource. Some Examples might be
+whenever a program accesses a disk or network resource. Some examples might be
 database operations, web requests, logging messages, and sending emails.
 
 Blocking IO is a scenario that should showcase Node.js's ability for effective
@@ -56,7 +56,7 @@ This operation will execute 50 times. The amount of time it takes to complete
 all 50 transactions is converted to a rate. This is considered one test.
 
 __Due to a bug in the loop counter, only 9 iterations where run on the Node.js
-implementation. The final run of the python version of this task was removed to
+implementation. The final run of the Python version of this task was removed to
 align the graph results.__
 
 ## Results
@@ -158,12 +158,13 @@ __C Average Elapsed Time: 0.0064275 Seconds__
 
 # Conclusion
 
-We have seen that Node.js is a fast and performant language.  It gets the most
-out of available resources by reducing idle time thanks to the event loop
-model. In synchronous tasks, it is able to impressively out perform other
-interpreted languages. In the case of the Fibonacci test, Node.js was closer to
-C's execution time then it was to Python's. Given the layers of abstraction
-involved in an interpreted language, this is impressive indeed.
+In review of these test results, my conclusion is that Node.js is a fast and
+performant language.  It gets the most out of available resources by reducing
+idle time thanks to the event loop model. In synchronous tasks, it is able to
+impressively out perform other interpreted languages. In the case of the
+Fibonacci test, Node.js was closer to C's execution time then it was to
+Python's. Given the layers of abstraction involved in an interpreted language,
+this is impressive indeed.
 
 Node.js has already proven itself as a viable language for serious programing
 jobs. The community doesn't need me for that. It has been gaining popularity
@@ -173,16 +174,14 @@ using this language and I look forward to learning more about.
 There are many more data points to investigate but given my recent experience,
 Node.js will be another good candidate for consideration in future projects.
 
-On a side note, I am disappointed by Python's performance in at least 2 of these
-cases. I feel that it should have done better. I know I could speed up the
+On a side note, I am disappointed by Python's performance in at least two of
+these cases. I feel that it should have done better. I know I could speed up the
 CPU bound tasks by using more memory efficient algorithms: Python is a memory
 hog.
 
-Thanks for reading!
-
 # Disclaimer
 
-I am not a seasoned Node.js Developer. I am sure these implementations will
+I am not a seasoned Node.js developer. I am sure these implementations will
 make many Node.js developers cry. But I am a seasoned Python developer and
 these Python implementations make me cry. We can frown at the code together.
 Feel free to offer additional ways to calculate these metrics.
@@ -195,4 +194,6 @@ Node.js code are equally terrible. Deal with it.
 Also, keep in mind these stats really only calculate _human waiting_ time and do
 not include other extremely important metrics such as memory utilization.
 
-[Test Source Code](https://github.com/en0/python-vs-nodejs)
+---
+
+Source coude available on [GitHub](https://github.com/en0/python-vs-nodejs)
