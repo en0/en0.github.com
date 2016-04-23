@@ -4,3 +4,12 @@ Theme: https://github.com/lazycoder-ru/lazystrap/tree/c9358d8184314bddc6a04adc9d
 Handy Tools:
  - https://plot.ly/organize/home
 
+Post Ideas:
+ [X] NodeVsPython - Speed tests
+ [ ] Simplicity - Simple systems vs Simple UX (Complexity Isolation)
+ [ ] Leadership - Lead by example, Inspire, Teach, Reamove blockers (including yourself)
+ [ ] The Zone - How I find it
+ [ ] Failure state analysis
+ [ ] Multi-threading
+ [ ] Microservices - A real world example.
+ [ ] Apache Mesos with Docker
