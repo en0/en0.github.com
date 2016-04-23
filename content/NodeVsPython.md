@@ -143,16 +143,21 @@ The results where quite amazing to me. Not only did Node.js out perform Python,
 Node.js crushed Python in a CPU bound process with zero blocking IO.  The margin
 between Node.js and Python is nearly as much as the margin between C and Python.
 
+__Edit: I ran this test again using [PyPy](http://pypy.org/download.html) and added the
+results into the graph.__
+
 _Note: The graph is using a logarithmic scale for visibility._
 
 <iframe width="100%" height="400" frameborder="0" scrolling="no"
-src="https://plot.ly/~en0/5.embed?share_key=yvaSgmkjsTQn8ESHmzEie4"></iframe>
+src="https://plot.ly/~en0/7.embed"></iframe>
 
-__Python Averaged Elapsed Time: 2.78023791313 Seconds__
+__Python Averaged Elapsed Time: 0.278023791313 Seconds__
 
 __Node.js Averaged Elapsed Time: 0.012099999999999998 Seconds__
 
 __C Average Elapsed Time: 0.0064275 Seconds__
+
+__PyPy Average Elapsed Time: 0.02586944103239 Seconds__
 
 ---
 
