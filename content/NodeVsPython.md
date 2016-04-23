@@ -199,6 +199,27 @@ Node.js code are equally terrible. Deal with it.
 Also, keep in mind these stats really only calculate _human waiting_ time and do
 not include other extremely important metrics such as memory utilization.
 
+## My Environment:
+
+__Python__
+```
+Python 2.7.10 (default, Oct 23 2015, 18:05:06)
+[GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.0.59.5)] on darwin
+```
+
+__Node.js__
+```
+{ http_parser: '2.5.2',
+  node: '4.3.1',
+  v8: '4.5.103.35',
+  uv: '1.8.0',
+  zlib: '1.2.8',
+  ares: '1.10.1-DEV',
+  icu: '56.1',
+  modules: '46',
+  openssl: '1.0.2f' }
+```
+
 ---
 
 Source coude available on [GitHub](https://github.com/en0/python-vs-nodejs)
