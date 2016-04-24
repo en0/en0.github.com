@@ -78,7 +78,7 @@ situations to find a canned solution because, to them, this is _programming_.
 
 Fundamental concepts such as hardware signaling, processor architecture, state
 machines, Boolean logic, Boolean math, and binary math are often missing from
-these classes but should be the focus of a computer science coreiculum.
+these classes but should be the focus of a computer science curriculum.
 Exploring some code is beneficial. But, the goal is not to program. It is to lay
 the foundation for the next concepts of requirements gathering, algorithm
 design, data structures, and more.
