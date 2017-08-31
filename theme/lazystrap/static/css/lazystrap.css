@@ -12,7 +12,8 @@ html, body {
     font-size: 15px;
     height: 100%;
     color: #505050;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-family: "Ubuntu";
 }
 
 table {
@@ -40,7 +41,7 @@ p {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'PT Serif', Georgia;
+    /*font-family: 'PT Serif', Georgia;*/
     color: #3b3b3b;
     background: url('../img/dotted-border.png') repeat-x scroll left bottom transparent;
     padding-bottom: 6px;
@@ -154,7 +155,7 @@ a:hover {
 }
 
 .navbar-desc {
-    font-family: Verdana, sans-serif;
+    /*font-family: Verdana, sans-serif;*/
     margin-top: -4px;
     letter-spacing: 1px;
     font-size: 13px;
@@ -170,7 +171,7 @@ a:hover {
 }
 
 .post-date {
-    font-family: "PT Serif", serif;
+    /*font-family: "PT Serif", serif;*/
     font-weight: bold;
     color: #e0e0e0;
     font-size: 20px;
@@ -199,7 +200,7 @@ a:hover {
     clear: both;
     padding-top: 15px;
     font-size: 15px;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    /*font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;*/
 }
 
 .search-query {
@@ -277,7 +278,7 @@ footer {
 }
 
 a.header-link {
-    font-family: 'PT Serif', Georgia;
+    /*font-family: 'PT Serif', Georgia;*/
     color: #4f4f4f;
 }
 
@@ -483,7 +484,7 @@ td.linenos {
 }
 
 pre {
-    font-family: 'Consolas','DejaVu Sans Mono','Bitstream Vera Sans Mono',monospace;
+    /*font-family: 'Consolas','DejaVu Sans Mono','Bitstream Vera Sans Mono',monospace;*/
     font-size: 12.5px;
     display: block; 
     padding: 9.5px; 
