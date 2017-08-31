@@ -4,6 +4,17 @@ Theme: https://github.com/lazycoder-ru/lazystrap/tree/c9358d8184314bddc6a04adc9d
 Handy Tools:
  - https://plot.ly/organize/home
 
+Publish Instructions:
+I had real trouble last time.
+- Merge your content changes into blog
+- $ pelican content -o output -s pelicanconf.py
+- $ ghp-import output
+- $ git checkout master
+- $ git lga # Copy the commit hash for gh-pages
+- $ git reset --HARD [COMMITID]
+- $ git push origin master -f
+
+
 Post Ideas:
  [X] NodeVsPython - Speed tests
  [ ] Simplicity - Simple systems vs Simple UX (Complexity Isolation)
