@@ -1,22 +1,24 @@
 Title: Data Structures: The Linked List
-Date: 2017-08-29 19:58
+Date: 2017-08-30 19:58
 Tags: DataStructures,LinkedList,C
 Category: Programming
 Slug: data-structures-the-linked-list
 Author: Ian Laird
 Summary: Exploring the characteristics and uses of linked lists.
 
-# Linked List
+<div class="banner">Data Structures: Linked Lists</div>
 
 If someone where to ask you, "What is a linked list good for?" What would you
-say? If you are like many developers, your response might be, "not much". We
-would probably struggle to think of a situation in our career we needed to use
-one specifically.
+say? If you are like many developers, your response might be, "not much." We
+would probably struggle to think of a situation in our career when we needed to
+use one.
 
-However, a linked list is not only a useful data structure, it is also used all
-over the place. From _Deques_ to _Stacks_, it is used in situations where
-fast insertion and removal is required. Let's take a brief look at the basic
-structure of a linked list to understand how it works.
+However, a linked list is not only a useful data structure, it is so often used
+that we do not even notice it. From Deques to Stacks, it is used in situations
+where fast insertion and removal is required. 
+
+Let's take a brief look at the basic structure of a linked list to understand
+how it works.
 
 # The Basics
 
@@ -24,18 +26,18 @@ A linked list is a structure used to store an ordered set of data. Similar to
 an array, the linked list can be used to store and access individual members of
 a collection.
 
-![Super-Powers-Of-The-Linked-List](/images/linked-list-visual-0.png)
+![image](/images/linked-list-visual-0.png){.full-line}
 
-Each item, or __node__, in a linked list points the next node. If needed, a
-node can also point to the node that proceeds it. This is known as a doubly
-linked list. A node will also contain some sort of data. This can be as simple
-as an integer or something as complex as another structure or pointers to
-other structures. Really, the sky is the limit and the details depend on what
-problem you are trying to solve.
+Each item, or node, in a linked list points the next node. If needed, a node
+can also point to its predicessor. This is known as a doubly linked list. A
+node will also contain some sort of data. This can be as simple as an integer,
+something as complex as another structure, or pointers to other structures.
+Really, the sky is the limit and the details depend on what problem you are
+trying to solve.
 
-# Characteristics of the Linked list.
+# Characteristics of the Linked list
 
-As with any other data structure, linked lists are good at some thing and bad
+As with any other data structure, linked lists are good at some things and bad
 at others. The characteristics of any data structure dictate the optimal use
 cases. So, what are the characteristics of a linked list? We will go through
 them one at a time.
@@ -46,40 +48,41 @@ The most obvious advantage of a linked list (over an array) is that, unlike an
 array, the members of a collection do not need to be stored next to each other
 in memory.  An array requires blocks of contiguous memory. A linked list only
 needs a reference to the next (and possibly the previous) node. This design
-gives linked lists a characteristic of being __Dynamic__.  In other words, the
-size of the collection can be easily altered during run-time.
+gives linked lists a characteristic of being dynamic. In other words, the size
+of the collection can be easily altered during run-time.
 
-__Let me explain.__
+__Let me explain__
 
 Using a standard array, we (or the compiler) must define a contiguous block of
-memory to store our data. As an example, lets use an array to store 100
-integers. That is 400 bytes (assuming x86) of contiguous memory.  There is no
-issue with this. We have an insane amount of _virtual address_ space available
-to us (128 TB in windows 10). Finding 400 contiguous bytes, or even 4 billion
-contiguous bytes is not a problem. But, what happens if we fill up this array
+memory to store our data. As an example, we could use an array to store 100
+integers. That is 400 bytes (assuming x86) of contiguous memory. There is no
+issue with this. We have an insane amount of virtual address space available to
+us (128 TB in windows 10). Finding 400 contiguous bytes, or even 4 billion
+contiguous bytes is not a problem. But what happens when we fill up this array
 and still have more values to store?
 
-Now, I know what you are thinking: "In my language i cannot fill up an array.
-It just gets bigger." And you are right. But how does the array _get bigger_?
+Now, I know what you are thinking: "In my language I cannot fill up an array.
+It just gets bigger." You are right. Let's take it to the next step though and
+ask the question, how does the array get bigger?
 
-Many languages like Node, Python, and C#, can define an array of _any size_
-using something called dynamic arrays. And dynamic arrays are great but they
-can be expensive. When a container runs out of space, it must be resized.
-Often, the this is done by duplicating the array in a new location in memory
-wile reserving a little more space to store additional values.
+Many languages like Node, Python, and C#, can define an array of any size using
+something called dynamic array. Dynamic arrays have their advantages, but their
+use comes at a cost. When the data of a dynamic array exceeds its pre-allocated
+space, it is resized. This is most often done by duplicating the entire array,
+including addtional space for new values.
 
-In our example, a system using dynamic arrays would have to tie up a minimum of
-804 bytes of memory and ask the processor to copy all 400 bytes to the new
-memory location. With 400 bytes this is not an issue. But 4 Billion bytes of
-data is another store. It might be easy to find 4G of consecutive address space
-but it is another matter to have 8G physically mapped into memory just to save
-4 bytes of data.
+In our example, a system using dynamic arrays would lock a minimum of 804 bytes
+of memory and ask the processor to copy all 400 bytes to the new memory
+location. With 400 bytes this is not an issue. With 4 Billion bytes, though,
+you can see where this is heading. While it might be easy to find 4G of
+consecutive address space, it is no trivial task activly read and write over 8G
+of memory on a system that might have only 4G of physical RAM.
 
 In this situation, using a linked list would use more memory (overhead for
 pointers to the next node) but would not require it all be mapped
 simultaneously. Nor would it require the processor copy large blocks of memory.
-It would simply allocate an additional 12 bytes of storage, 8 bytes for the
-next pointer and 4 bytes for the value, and put the location of this new node
+It would simply allocate an additional 12 bytes of storage: 8 bytes for the
+next pointer, and 4 bytes for the value, then put the location of this new node
 in the next field of the last entry. Insertion time is constant.
 
 ## Fast Insertion and Deletion
@@ -133,7 +136,7 @@ Array : [ 1 | 2 | 3 |   |   ]
 One characteristic of the linked list that is less then exciting is that it is
 not well suited for random access. A linked list has no way to directly access
 a specific node at a random offset in a collection. The only option it has is
-to do a _linear search_ through the list and find the node being requested.
+to do a linear search through the list and find the node being requested.
 
 In addition, the linked list has no special facility to check membership of a
 specific value. Once again, the list must be searched to find the answer.
@@ -243,7 +246,7 @@ problem.
 
 One more consideration regarding linked lists that I find intriguing: They are
 the basis of understanding for many of the more complex data structures such as
-_Binary Search Trees_, _Heaps_, and _Graphs_. Each of these structures keep a
+Binary Search Trees, Heaps, and Graphs. Each of these structures keep a
 reference to its neighbors the same way and it is simply how the data is
 organized within the structure that gives it unique characteristics. A linked
 list is nothing more then a simple tree in the say way a tree is a simple
