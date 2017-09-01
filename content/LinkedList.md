@@ -1,6 +1,6 @@
 Title: Data Structures: The Linked List
-Date: 2017-08-30 19:58
-Tags: DataStructures,LinkedList,C
+Date: 2017-09-01 17:05
+Tags: DataStructures,LinkedList
 Category: Programming
 Slug: data-structures-the-linked-list
 Author: Ian Laird
