@@ -1,6 +1,5 @@
 Title: Data Structures: The Linked List
 Date: 2017-08-30 19:58
-Status: draft
 Tags: DataStructures,LinkedList,C
 Category: Programming
 Slug: data-structures-the-linked-list
