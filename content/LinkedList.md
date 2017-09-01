@@ -9,7 +9,7 @@ Summary: Exploring the characteristics and uses of linked lists.
 
 <div class="banner">Data Structures: Linked Lists</div>
 
-If someone where to ask you, "What is a linked list good for?" What would you
+If someone were to ask you, "What is a linked list good for," what would you
 say? If you are like many developers, your response might be, "not much." We
 would probably struggle to think of a situation in our career when we needed to
 use one.
@@ -30,27 +30,25 @@ a collection.
 ![image](/images/linked-list-visual-0.png){.full-line}
 
 Each item, or node, in a linked list points the next node. If needed, a node
-can also point to its predicessor. This is known as a doubly linked list. A
+can also point to its predecessor. This is known as a doubly linked list. Each
 node will also contain some sort of data. This can be as simple as an integer,
-something as complex as another structure, or pointers to other structures.
-Really, the sky is the limit and the details depend on what problem you are
-trying to solve.
+as complex as another structure, or even a pointer to another structures.  The
+sky's the limit, and the details depend on what problem you are trying to
+solve.
 
 # Characteristics of the Linked list
 
 As with any other data structure, linked lists are good at some things and bad
 at others. The characteristics of any data structure dictate the optimal use
-cases. So, what are the characteristics of a linked list? We will go through
-them one at a time.
+cases. So, what are the characteristics of a linked list?
 
 ## Dynamic Sizing
 
-The most obvious advantage of a linked list (over an array) is that, unlike an
-array, the members of a collection do not need to be stored next to each other
-in memory.  An array requires blocks of contiguous memory. A linked list only
-needs a reference to the next (and possibly the previous) node. This design
-gives linked lists a characteristic of being dynamic. In other words, the size
-of the collection can be easily altered during run-time.
+Unlike an array, the members of a collection do not need to be stored next to
+each other in memory.  An array requires blocks of contiguous memory. A linked
+list only needs a reference to the next (and, if necessary, the previous) node.
+This design gives linked lists a characteristic of being dynamic. In other
+words, the size of the collection can be easily altered during run-time.
 
 __Let me explain__
 
@@ -58,26 +56,26 @@ Using a standard array, we (or the compiler) must define a contiguous block of
 memory to store our data. As an example, we could use an array to store 100
 integers. That is 400 bytes (assuming x86) of contiguous memory. There is no
 issue with this. We have an insane amount of virtual address space available to
-us (128 TB in windows 10). Finding 400 contiguous bytes, or even 4 billion
+us (128 TB in Windows 10). Finding 400 contiguous bytes, or even 4 billion
 contiguous bytes is not a problem. But what happens when we fill up this array
 and still have more values to store?
 
-Now, I know what you are thinking: "In my language I cannot fill up an array.
-It just gets bigger." You are right. Let's take it to the next step though and
-ask the question, how does the array get bigger?
+Now, I know what you're thinking: "In my language I can't fill up an array.
+It just gets bigger." You're right. Let's take it to the next step though and
+ask the question: how does the array get bigger?
 
-Many languages like Node, Python, and C#, can define an array of any size using
-something called dynamic array. Dynamic arrays have their advantages, but their
+Many languages like Node, Python, and C# can define an array of any size using
+something called a dynamic array. Dynamic arrays have their advantages, but their
 use comes at a cost. When the data of a dynamic array exceeds its pre-allocated
 space, it is resized. This is most often done by duplicating the entire array,
-including addtional space for new values.
+including additional space for new values.
 
 In our example, a system using dynamic arrays would lock a minimum of 804 bytes
 of memory and ask the processor to copy all 400 bytes to the new memory
-location. With 400 bytes this is not an issue. With 4 Billion bytes, though,
+location. With 400 bytes this is not an issue. With 4 billion bytes, though,
 you can see where this is heading. While it might be easy to find 4G of
-consecutive address space, it is no trivial task activly read and write over 8G
-of memory on a system that might have only 4G of physical RAM.
+consecutive address space, it is no trivial task to actively read and write
+over 8G of memory on a system that might have only 4G of physical RAM.
 
 In this situation, using a linked list would use more memory (overhead for
 pointers to the next node) but would not require it all be mapped
@@ -88,7 +86,7 @@ in the next field of the last entry. Insertion time is constant.
 
 ## Fast Insertion and Deletion
 
-As we just learned from the above section, insertion time is constant. It is
+As we learned from the above section, insertion time is constant. It is
 probably no surprise that deletion time is also constant. Just as adding a new
 integer to our collection required an allocation and a pointer reference
 update, a deletion only requires a pointer reference update and a
@@ -105,7 +103,7 @@ void insert_after(node *member, int value) {
 ```
 
 As you can see, a node can be added between two other nodes just as easily no
-mater where it is in the list. This is different from an array where each
+matter where it is in the list. This is different from an array where each
 member below the point of insertion will need to be moved to make room for the
 new value. An operation like that could be expensive.
 
@@ -117,15 +115,15 @@ void array_insert_at(int value, int index, int *array, int length) {
 }
 ```
 
-## Space Efficient
+## Space Efficiency
 
 Another characteristic of a linked list is space efficiency. This does not mean
-that a linked list takes up the least amount of memory to store a collection of
-values (it does not). It means that it does not waist any space and has minimal
-overhead. If you have a collection of 50 integers, you are only using the space
-needed to store 50 integers. You do not need to reserve additional space
-because you plan to store more values. That space can simply be allocated when
-needed.
+that a linked list takes up the minimum amount of memory required to store a
+collection of values. It does not. It means that it does not waste any space,
+and has minimal overhead. If you have a collection of 50 integers, you are only
+using the space needed to store 50 integers. You do not need to reserve
+additional space because you plan to store more values. That space can simply
+be allocated when needed.
 
 ```
 LinkedList : 1->2->3
@@ -134,20 +132,19 @@ Array : [ 1 | 2 | 3 |   |   ]
 
 ## Linear search
 
-One characteristic of the linked list that is less then exciting is that it is
-not well suited for random access. A linked list has no way to directly access
-a specific node at a random offset in a collection. The only option it has is
-to do a linear search through the list and find the node being requested.
+Unlike arrays, lists are not well suited for random access. A linked list has
+no way to directly access a specific node at a random offset in a collection.
+The only option is to do a linear search through the list and find the node
+being requested.
 
 In addition, the linked list has no special facility to check membership of a
 specific value. Once again, the list must be searched to find the answer.
 
-As an example, if we want to get the 5th node in the list, we would have to
-start at the head of the list and follow to the next node, and the next until
-we have reached the 5th node. If we wanted to know if the value 400 was
-contained in the list, we would have to start at the head and test each value
-in turn until we find it.  Once again, the 4 billion members because
-problematic.
+As an example, if we want to get the 5th node in the list, we start at the head
+of the list and follow to the next node, repeating until we reach the 5th node.
+If we wanted to know if the value 400 was contained in the list, we would have
+to start at the head and test each value in turn until we find it.  Once again,
+the 4 billion members because problematic.
 
 This is NOT an issue in standard arrays. We can simply go to the offset of
 a member in a constant time. If the array is sorted, we can use a binary search
@@ -155,25 +152,23 @@ to expedite membership tests. An array is also capable of performing a linear
 search so linked lists hold no advantage in this area.
 
 
-# Use Case
+# Use Cases
 
-So, linked lists are good at fast insertion and fast removal of members, They
-are space efficient and they are terrible at random access and membership
-checks. With these characteristics in mind, what problems are linked lists
-suited to solve?
+Linked lists are good at fast insertion and fast removal of members, and are
+space efficient, but are terrible at random access and membership checks. With
+these characteristics in mind, what problems are linked lists suited to solve?
 
 ## Stacks
 
-A stack is an abstract data structure that can be used in a variety of
-situations. From undo/redo tracking to syntax checking to returning to a
-preempted workload, a stack is powerful. It is also quite simple - but why are
-we talking about stacks?
+From undo/redo tracking to syntax checking to returning to a preempted
+workload, stacks are powerful data structures. They are also quite simple - but
+why are we talking about stacks?
 
-There is more then one way to implement a stack but using a linked list is
+There is more than one way to implement a stack but using a linked list is
 simple, especially if your programming language already supplies a linked list.
 If you insert and remove from only one end of a linked list, you effectively
-have a stack. All that is missing is handing of exceptional cases such as
-empty.
+have a stack. All that is missing is handing of exceptional cases such as an
+empty list.
 
 ```c
 node *head;
@@ -200,14 +195,12 @@ int peek() {
 
 ## Queues
 
-A queue is another abstract data structure that is very similar to a stack. And
-just like a stack, it offers solutions to many problems. Workload management,
-rate limiting, turn based problems are just a few things that queues are good
-at.
+Workload management, rate limiting, or turn-based problems are just a few things
+that queues are good at.
 
 To implement a queue with a doubly linked list, simply write to one end and
-remove from the other end. Once again, some exceptional condition handing would
-be required.
+remove from the other end. Once again, some exceptional condition handling
+would be required.
 
 ```c
 // Assume that head->next points to tail and tail->prev points to head.
@@ -234,21 +227,20 @@ int dequeue() {
 # Conclusion
 
 Linked lists are often overlooked. Although they solve similar problems as
-arrays, they have strengths that arrays do not. Linked lists are well suited
-to tasks that require quick add and remove where sequence is important but
-would be a poor choice if you need to query or check membership of a large
-collection.
+arrays, they have strengths that arrays do not. Linked lists are well suited to
+tasks that require quick adding and removeing, or tasks where sequence is
+important, but would be a poor choice if you need to query or check membership
+of a large collection.
 
-As with any other data structure, it is useful to consider the positives and
-the negative characteristics and how they might relate to your specific
-problem.
+As with any other data structure, it is useful to consider the positive and
+negative characteristics and how they might relate to your specific problem.
 
 # Other Thoughts
 
-One more consideration regarding linked lists that I find intriguing: They are
-the basis of understanding for many of the more complex data structures such as
-Binary Search Trees, Heaps, and Graphs. Each of these structures keep a
-reference to its neighbors the same way and it is simply how the data is
-organized within the structure that gives it unique characteristics. A linked
-list is nothing more then a simple tree in the say way a tree is a simple
-graph.
+One more consideration regarding linked lists that I find intriguing:
+understanding lists is essential to understanding many more complex data
+structures such as Binary Search Trees, Heaps, and Graphs. Each of these
+structures keep references to their neighbors in the same way lists do, and it
+is simply how the data is organized within the structure that gives it unique
+characteristics. A linked list is nothing more than a simple tree in the way a
+tree is a simple graph.
