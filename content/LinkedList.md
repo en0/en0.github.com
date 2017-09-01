@@ -130,7 +130,7 @@ LinkedList : 1->2->3
 Array : [ 1 | 2 | 3 |   |   ]
 ```
 
-## Linear search
+## Linear Search
 
 Unlike arrays, lists are not well suited for random access. A linked list has
 no way to directly access a specific node at a random offset in a collection.
@@ -167,7 +167,7 @@ why are we talking about stacks?
 There is more than one way to implement a stack but using a linked list is
 simple, especially if your programming language already supplies a linked list.
 If you insert and remove from only one end of a linked list, you effectively
-have a stack. All that is missing is handing of exceptional cases such as an
+have a stack. All that is missing is handling of exceptional cases such as an
 empty list.
 
 ```c
@@ -228,7 +228,7 @@ int dequeue() {
 
 Linked lists are often overlooked. Although they solve similar problems as
 arrays, they have strengths that arrays do not. Linked lists are well suited to
-tasks that require quick adding and removeing, or tasks where sequence is
+tasks that require quick adding and removing, or tasks where sequence is
 important, but would be a poor choice if you need to query or check membership
 of a large collection.
 
